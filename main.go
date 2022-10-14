@@ -1,9 +1,18 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+)
 
 func main() {
-  fmt.Println("Hello World")
-  
 
+    content, err := ioutil.ReadFile("testdata/yarn.lock")
+
+     if err != nil {
+          log.Fatal(err)
+     }
+
+    fmt.Println(string(content))
 }
